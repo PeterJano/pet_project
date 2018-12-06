@@ -2,7 +2,32 @@ import requests
 from bs4 import BeautifulSoup
 import csv
 import time
+import sys
+import os
 
+
+def menu():
+
+    choice = " "
+
+    while choice not in '1 2 3'.split():
+
+        os.system("clear")
+
+        choice = input("{:>300}".format(" Choose an option!\n\n") +
+                            "{:>295}".format("(1) Show all\n") +
+                            "{:>302}".format("(2) Filter by price\n") +
+                            "{:>292}".format("(3) Quit\n\n"))
+
+        if choice == "1":
+            pass # Ide gyün a show all fgv.
+        elif choice == "2":
+            pass # Filter by price fgv.
+        elif choice == "3":
+            sys.exit()
+
+
+menu()
 
 source = requests.get("https://store.steampowered.com/search/?specials=1").text
 
@@ -24,7 +49,6 @@ for discounts in soup.find_all('a', class_ = 'search_result_row'):
     print(on_sale)
 
     price = discounts.find('div', class_= 'search_price').text
-<<<<<<< HEAD
     print('Original price\tOn sale price')
 
     price = price.replace('\n\t\t\t\t\t\t\t\t', '')
@@ -33,11 +57,6 @@ for discounts in soup.find_all('a', class_ = 'search_result_row'):
     #     if letter
     print(price)
     print('\n')
-=======
-    # for letter in price:
-    #     if letter
-    print(price.split('€'))
->>>>>>> d908935f4c095c59c4d48b577648b0c1317856c0
 
 # print(soup.prettify())
 
