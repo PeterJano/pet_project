@@ -6,6 +6,7 @@ import time
 import sys
 import os
 import random
+from PIL import Image
 
 
 def menu(soup):
@@ -35,7 +36,9 @@ def menu(soup):
 
 
 def easter_egg_1():
-    webbrowser.open_new("http://i.kym-cdn.com/photos/images/original/000/508/987/d12.gif")
+    # webbrowser.open_new("http://i.kym-cdn.com/photos/images/original/000/508/987/d12.gif")
+    img = Image.open('filename.jpg')
+    img.show()
 
 
 def making_soup():
@@ -87,7 +90,7 @@ def show_filtered_by_sale(soup, number):
         on_sale = discounts.find('div', class_='search_discount').span.text
         name = discounts.find('span', class_='title').text
         price = discounts.find('div', class_= 'search_price').text
-        rounded_sale = on_sale[0:2]
+        rounded_sale = on_sale[0:3]
         if rounded_sale >= number:
             continue
         
