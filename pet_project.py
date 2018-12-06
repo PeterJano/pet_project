@@ -24,6 +24,7 @@ for discounts in soup.find_all('a', class_ = 'search_result_row'):
     print(on_sale)
 
     price = discounts.find('div', class_= 'search_price').text
+<<<<<<< HEAD
     print('Original price\tOn sale price')
 
     price = price.replace('\n\t\t\t\t\t\t\t\t', '')
@@ -32,6 +33,11 @@ for discounts in soup.find_all('a', class_ = 'search_result_row'):
     #     if letter
     print(price)
     print('\n')
+=======
+    # for letter in price:
+    #     if letter
+    print(price.split('€'))
+>>>>>>> d908935f4c095c59c4d48b577648b0c1317856c0
 
 # print(soup.prettify())
 
