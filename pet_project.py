@@ -22,8 +22,8 @@ for discounts in soup.find_all('a', class_ = 'search_result_row'):
     print(on_sale)
 
     price = discounts.find('div', class_= 'search_price').text
-    for letter in price:
-        if letter
+    # for letter in price:
+    #     if letter
     print(price.split('€'))
 
 # print(soup.prettify())
